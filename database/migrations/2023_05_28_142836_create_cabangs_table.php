@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('cabangs', function (Blueprint $table) {
             $table->id();
+            $table->string('nama_cabang',255);
+            $table->string('alamat',255);
+            $table->string('telp',255);
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
             $table->timestamps();
         });
     }

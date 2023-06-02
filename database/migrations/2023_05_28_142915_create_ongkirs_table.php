@@ -13,6 +13,15 @@ return new class extends Migration
     {
         Schema::create('ongkirs', function (Blueprint $table) {
             $table->id();
+            $table->string('jenis_layanan',255);
+            $table->bigInteger('berat_barang');
+            $table->string('asal_pengiriman',255);
+            $table->string('jarak_pengiriman',255);
+            $table->string('metode_pengiriman',255);
+            $table->string('asuransi_pengiriman',255);
+            $table->bigInteger('biaya_ongkir');
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
             $table->timestamps();
         });
     }
