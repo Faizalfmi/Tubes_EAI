@@ -11,17 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('status', function (Blueprint $table) {
+        Schema::create('pengirimen', function (Blueprint $table) {
             $table->id();
             $table->foreignId('pemesanan_id');
             $table->foreignId('cabang_id');
-            $table->foreignId('kurir_id');
             $table->string('nama_barang');
             $table->string('lokasi_barang');
             $table->string('alamat_tujuan');
             $table->string('status_pengiriman');
-            $table->string('tanggal_pengiriman');
-            $table->string('tanggal_penerimaan');
+            $table->date('tanggal_pengiriman');
+            $table->date('tanggal_penerimaan');
             $table->timestamps();
         });
     }
@@ -31,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('status');
+        Schema::dropIfExists('pengirimen');
     }
 };

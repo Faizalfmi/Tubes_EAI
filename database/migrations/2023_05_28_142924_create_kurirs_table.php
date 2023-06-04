@@ -13,8 +13,9 @@ return new class extends Migration
     {
         Schema::create('kurirs', function (Blueprint $table) {
             $table->id();
-            $table->string('nama_kurir');
-            $table->string('telp_kurir');
+            $table->string('nama_kurir'); 
+            $table->foreignId('status_id')->nullable();
+            $table->foreignId('layanan_id')->nullable();
             $table->timestamps();
         });
     }

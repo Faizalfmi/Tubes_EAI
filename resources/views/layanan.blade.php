@@ -21,16 +21,16 @@
                         <a>GET STARTED</a>
                     </li>
                     <li class="scroll-to-link" data-target="content-get-characters">
-                        <a>Get Pemesanan</a>
+                        <a>Get Layanan</a>
                     </li>
                     <li class="scroll-to-link" data-target="content-post-characters">
-                        <a>Post Pemesanan</a>
+                        <a>Post Layanan</a>
                     </li>
                     <li class="scroll-to-link" data-target="content-put-characters">
-                        <a>Put Pemesanan</a>
+                        <a>Put Layanan</a>
                     </li>
                     <li class="scroll-to-link" data-target="content-delete-characters">
-                        <a>Delete Pemesanan</a>
+                        <a>Delete Layanan</a>
                     </li>
                 </ul>
             </div>
@@ -40,49 +40,49 @@
         <div class="content-page p-4">
             <div class="content">
                 <div class="overflow-hidden content-section" id="content-get-characters">
-                    <h2 class="title-cabang mt-3">Data Pemesanan</h2>
-                    <!-- Button trigger modal -->
-                    @if ($pemesanan->count() == 0)
+                    <h2 class="title-cabang mt-3">Data Layanan</h2>
+                    @if ($layanan->count() == 0)
                         <h3>Tidak ada data</h3>
                     @else
                         <table class="table numbered-table">
                             <thead>
                                 <tr>
                                     <th scope="col">No</th>
-                                    <th scope="col">Nama Produk</th>
-                                    <th scope="col">Harga Produk</th>
-                                    <th scope="col">Tanggal Pemesanan</th>
-                                    <th scope="col">Status Pemesanan</th>
-                                    <th scope="col">Nama Customer</th>
-                                    <th scope="col">Alamat Customer</th>
-                                    <th scope="col">Telepon Customer</th>
+                                    <th scope="col">Nama Layanan</th>
+                                    <th scope="col">Berat Barang</th>
+                                    <th scope="col">Asal Pengiriman</th>
+                                    <th scope="col">Tujuan Pengiriman</th>
+                                    <th scope="col">Jarak Pengiriman</th>
+                                    <th scope="col">Asuransi Pengiriman</th>
+                                    <th scope="col">Biaya Ongkir</th>
+                                    <th scope="col">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($pemesanan as $p)
+                                @foreach ($layanan as $l)
                                     <tr>
                                         <td></td>
-                                        <td>{{ $p->nama_produk_pemesanan }}</td>
-                                        <td>{{ $p->harga_produk_pemesanan }}</td>
-                                        <td>{{ $p->tanggal_pemesanan }}</td>
-                                        <td>{{ $p->status_pemesanan }}</td>
-                                        <td>{{ $p->nama_customer }}</td>
-                                        <td>{{ $p->alamat_customer }}</td>
-                                        <td>{{ $p->telp_customer }}</td>
+                                        <td>{{ $l->nama_layanan }}</td>
+                                        <td>{{ $l->berat_barang }} Kg</td>
+                                        <td>{{ $l->asal_pengiriman }}</td>
+                                        <td>{{ $l->tujuan_pengiriman }}</td>
+                                        <td>{{ $l->jarak_pengiriman }}</td>
+                                        <td>{{ $l->asuransi_pengiriman }}</td>
+                                        <td>{{ $l->biaya_ongkir }}</td>
+
                                     </tr>
                                 @endforeach
                             </tbody>
                         </table>
                     @endif
-
                 </div>
             </div>
             <div class="content">
                 <div class="overflow-hidden content-section" id="content-get-characters">
-                    <h2 class="title-cabang mt-3">Get Cabang</h2>
+                    <h2 class="title-cabang mt-3">Get Layanan</h2>
                     <p>
                         Get url :<br>
-                        <code class="higlighted break-word">https://eai.babagigroup.com/api/pemesanan</code>
+                        <code class="higlighted break-word">https://eai.babagigroup.com/api/layanan</code>
                     </p>
                     <br>
 
@@ -97,39 +97,39 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>nama_produk_pemesanan</td>
+                                <td>nama_layanan</td>
                                 <td>String</td>
-                                <td>Nama Produk</td>
+                                <td>Nama Layanan</td>
                             </tr>
                             <tr>
-                                <td>harga_produk_pemesanan</td>
+                                <td>berat_barang</td>
+                                <td>Float</td>
+                                <td>Berat Barang</td>
+                            </tr>
+                            <tr>
+                                <td>asal_pengiriman</td>
+                                <td>String</td>
+                                <td>Asal Pengiriman</td>
+                            </tr>
+                            <tr>
+                                <td>tujuan_pengiriman</td>
+                                <td>String</td>
+                                <td>Tujuan Pengiriman</td>
+                            </tr>
+                            <tr>
+                                <td>jarak_pengiriman</td>
                                 <td>Integer</td>
-                                <td>Harga Produk</td>
+                                <td>Jarak Pengiriman</td>
                             </tr>
                             <tr>
-                                <td>tanggal_pemesanan</td>
-                                <td>Date</td>
-                                <td>Tanggal Pemesanan</td>
-                            </tr>
-                            <tr>
-                                <td>status_pemesanan</td>
+                                <td>asuransi_pengiriman</td>
                                 <td>String</td>
-                                <td>Status Pemesanan</td>
+                                <td>Asuransi Pengiriman</td>
                             </tr>
                             <tr>
-                                <td>nama_customer</td>
-                                <td>String</td>
-                                <td>Nama Customer</td>
-                            </tr>
-                            <tr>
-                                <td>alamat_customer</td>
-                                <td>String</td>
-                                <td>Alamat Customer</td>
-                            </tr>
-                            <tr>
-                                <td>telp_customer</td>
-                                <td>String</td>
-                                <td>Telepon Customer</td>
+                                <td>biaya_ongkir</td>
+                                <td>Integer</td>
+                                <td>Biaya Ongkir</td>
                             </tr>
                         </tbody>
                     </table>
@@ -138,10 +138,10 @@
 
             <div class="content">
                 <div class="overflow-hidden content-section" id="content-post-characters">
-                    <h2 class="title-cabang mt-3">Post Cabang</h2>
+                    <h2 class="title-cabang mt-3">Post Layanan</h2>
                     <p>
                         Post url :<br>
-                        <code class="higlighted break-word">https://eai.babagigroup.com/api/pemesanan</code>
+                        <code class="higlighted break-word">https://eai.babagigroup.com/api/layanan</code>
                     </p>
                     <br>
 
@@ -156,39 +156,39 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>nama_produk_pemesanan</td>
+                                <td>nama_layanan</td>
                                 <td>String</td>
-                                <td>Nama Produk</td>
+                                <td>Nama Layanan</td>
                             </tr>
                             <tr>
-                                <td>harga_produk_pemesanan</td>
+                                <td>berat_barang</td>
+                                <td>Float</td>
+                                <td>Berat Barang</td>
+                            </tr>
+                            <tr>
+                                <td>asal_pengiriman</td>
+                                <td>String</td>
+                                <td>Asal Pengiriman</td>
+                            </tr>
+                            <tr>
+                                <td>tujuan_pengiriman</td>
+                                <td>String</td>
+                                <td>Tujuan Pengiriman</td>
+                            </tr>
+                            <tr>
+                                <td>jarak_pengiriman</td>
                                 <td>Integer</td>
-                                <td>Harga Produk</td>
+                                <td>Jarak Pengiriman</td>
                             </tr>
                             <tr>
-                                <td>tanggal_pemesanan</td>
-                                <td>Date</td>
-                                <td>Tanggal Pemesanan</td>
-                            </tr>
-                            <tr>
-                                <td>status_pemesanan</td>
+                                <td>asuransi_pengiriman</td>
                                 <td>String</td>
-                                <td>Status Pemesanan</td>
+                                <td>Asuransi Pengiriman</td>
                             </tr>
                             <tr>
-                                <td>nama_customer</td>
-                                <td>String</td>
-                                <td>Nama Customer</td>
-                            </tr>
-                            <tr>
-                                <td>alamat_customer</td>
-                                <td>String</td>
-                                <td>Alamat Customer</td>
-                            </tr>
-                            <tr>
-                                <td>telp_customer</td>
-                                <td>String</td>
-                                <td>Telepon Customer</td>
+                                <td>biaya_ongkir</td>
+                                <td>Integer</td>
+                                <td>Biaya Ongkir</td>
                             </tr>
                         </tbody>
                     </table>
@@ -197,10 +197,10 @@
 
                 <div class="content">
                     <div class="overflow-hidden content-section" id="content-put-characters">
-                        <h2 class="title-cabang mt-3">Put Cabang</h2>
+                        <h2 class="title-cabang mt-3">Put Layanan</h2>
                         <p>
                             Put url :<br>
-                            <code class="higlighted break-word">https://eai.babagigroup.com/api/pemesanan/{id}/edit</code>
+                            <code class="higlighted break-word">https://eai.babagigroup.com/api/layanan/{id}/edit</code>
                         </p>
                         <br>
 
@@ -215,39 +215,39 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>nama_produk_pemesanan</td>
+                                    <td>nama_layanan</td>
                                     <td>String</td>
-                                    <td>Nama Produk</td>
+                                    <td>Nama Layanan</td>
                                 </tr>
                                 <tr>
-                                    <td>harga_produk_pemesanan</td>
+                                    <td>berat_barang</td>
+                                    <td>Float</td>
+                                    <td>Berat Barang</td>
+                                </tr>
+                                <tr>
+                                    <td>asal_pengiriman</td>
+                                    <td>String</td>
+                                    <td>Asal Pengiriman</td>
+                                </tr>
+                                <tr>
+                                    <td>tujuan_pengiriman</td>
+                                    <td>String</td>
+                                    <td>Tujuan Pengiriman</td>
+                                </tr>
+                                <tr>
+                                    <td>jarak_pengiriman</td>
                                     <td>Integer</td>
-                                    <td>Harga Produk</td>
+                                    <td>Jarak Pengiriman</td>
                                 </tr>
                                 <tr>
-                                    <td>tanggal_pemesanan</td>
-                                    <td>Date</td>
-                                    <td>Tanggal Pemesanan</td>
-                                </tr>
-                                <tr>
-                                    <td>status_pemesanan</td>
+                                    <td>asuransi_pengiriman</td>
                                     <td>String</td>
-                                    <td>Status Pemesanan</td>
+                                    <td>Asuransi Pengiriman</td>
                                 </tr>
                                 <tr>
-                                    <td>nama_customer</td>
-                                    <td>String</td>
-                                    <td>Nama Customer</td>
-                                </tr>
-                                <tr>
-                                    <td>alamat_customer</td>
-                                    <td>String</td>
-                                    <td>Alamat Customer</td>
-                                </tr>
-                                <tr>
-                                    <td>telp_customer</td>
-                                    <td>String</td>
-                                    <td>Telepon Customer</td>
+                                    <td>biaya_ongkir</td>
+                                    <td>Integer</td>
+                                    <td>Biaya Ongkir</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -256,11 +256,11 @@
 
                     <div class="content">
                         <div class="overflow-hidden content-section" id="content-delete-characters">
-                            <h2 class="title-cabang mt-3">Delete Cabang</h2>
+                            <h2 class="title-cabang mt-3">Delete Layanan</h2>
                             <p>
                                 Delete url :<br>
                                 <code
-                                    class="higlighted break-word">https://eai.babagigroup.com/api/pemesanan/{id}/delete</code>
+                                    class="higlighted break-word">https://eai.babagigroup.com/api/layanan/{id}/delete</code>
                             </p>
                             <br>
                             <h4>QUERY PARAMETERS</h4>
@@ -274,39 +274,39 @@
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td>nama_produk_pemesanan</td>
+                                        <td>nama_layanan</td>
                                         <td>String</td>
-                                        <td>Nama Produk</td>
+                                        <td>Nama Layanan</td>
                                     </tr>
                                     <tr>
-                                        <td>harga_produk_pemesanan</td>
+                                        <td>berat_barang</td>
+                                        <td>Float</td>
+                                        <td>Berat Barang</td>
+                                    </tr>
+                                    <tr>
+                                        <td>asal_pengiriman</td>
+                                        <td>String</td>
+                                        <td>Asal Pengiriman</td>
+                                    </tr>
+                                    <tr>
+                                        <td>tujuan_pengiriman</td>
+                                        <td>String</td>
+                                        <td>Tujuan Pengiriman</td>
+                                    </tr>
+                                    <tr>
+                                        <td>jarak_pengiriman</td>
                                         <td>Integer</td>
-                                        <td>Harga Produk</td>
+                                        <td>Jarak Pengiriman</td>
                                     </tr>
                                     <tr>
-                                        <td>tanggal_pemesanan</td>
-                                        <td>Date</td>
-                                        <td>Tanggal Pemesanan</td>
-                                    </tr>
-                                    <tr>
-                                        <td>status_pemesanan</td>
+                                        <td>asuransi_pengiriman</td>
                                         <td>String</td>
-                                        <td>Status Pemesanan</td>
+                                        <td>Asuransi Pengiriman</td>
                                     </tr>
                                     <tr>
-                                        <td>nama_customer</td>
-                                        <td>String</td>
-                                        <td>Nama Customer</td>
-                                    </tr>
-                                    <tr>
-                                        <td>alamat_customer</td>
-                                        <td>String</td>
-                                        <td>Alamat Customer</td>
-                                    </tr>
-                                    <tr>
-                                        <td>telp_customer</td>
-                                        <td>String</td>
-                                        <td>Telepon Customer</td>
+                                        <td>biaya_ongkir</td>
+                                        <td>Integer</td>
+                                        <td>Biaya Ongkir</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -316,6 +316,6 @@
                 </div>
             </div>
         </div>
-        <script src="js/script.js"></script>
+
     </body>
 @endsection

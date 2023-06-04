@@ -47,7 +47,7 @@
                         <a class="nav-link" href="/kurir">Kurir</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/ongkir">Ongkir</a>
+                        <a class="nav-link" href="/layanan">Layanan</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/status">Status</a>

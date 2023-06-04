@@ -20,7 +20,6 @@ return new class extends Migration
             $table->string('nama_customer');
             $table->string('alamat_customer');
             $table->string('telp_customer');
-            $table->foreignId('layanan_id')->nullable();
             $table->timestamps();
         });
     }

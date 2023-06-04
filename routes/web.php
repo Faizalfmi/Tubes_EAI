@@ -3,6 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CabangController;
 use App\Http\Controllers\PemesananController;
+use App\Http\Controllers\KurirController;
+use App\Http\Controllers\StatusController;
+use App\Http\Controllers\LayananController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,3 +33,9 @@ Route::get('/pemesanan',[PemesananController::class,'index']);
 
 //Kurir
 Route::get('/kurir',[KurirController::class,'index']);
+
+//Status
+Route::get('/status',[StatusController::class,'index']);
+
+//
+Route::get('/layanan',[LayananController::class,'index']);
