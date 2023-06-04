@@ -4,6 +4,9 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\Pemesanan;
+use Faker\Factory as Faker;
+
 
 class DatabaseSeeder extends Seeder
 {
@@ -12,11 +15,17 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // \App\Models\User::factory(10)->create();
+        $date = date('Y-m-d H:i:s');
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        $pemesanan = new Pemesanan();
+        $pemesanan->nama_produk_pemesanan = 'Peralatan Makan';
+        $pemesanan->harga_produk_pemesanan = 10000;
+        $pemesanan->tanggal_pemesanan = $date;
+        $pemesanan->status_pemesanan = 'pending';
+        $pemesanan->nama_customer = 'Dudung';
+        $pemesanan->alamat_customer = 'Jl Postman';
+        $pemesanan->telp_customer = '0812312312';
+        $pemesanan->save();
+
     }
 }

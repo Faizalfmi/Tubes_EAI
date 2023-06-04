@@ -13,6 +13,14 @@ return new class extends Migration
     {
         Schema::create('pemesanans', function (Blueprint $table) {
             $table->id();
+            $table->string('nama_produk_pemesanan');
+            $table->bigInteger('harga_produk_pemesanan');
+            $table->date('tanggal_pemesanan');
+            $table->string('status_pemesanan');
+            $table->string('nama_customer');
+            $table->string('alamat_customer');
+            $table->string('telp_customer');
+            $table->foreignId('layanan_id')->nullable();
             $table->timestamps();
         });
     }

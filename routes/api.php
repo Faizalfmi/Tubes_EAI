@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Api\ApiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,3 +18,9 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('/cabang',[ApiController::class,'indexCabang']);
+Route::post('/cabang',[ApiController::class,'storeCabang']);
+Route::get('/cabang/{id}',[ApiController::class,'showCabang']);
+Route::put('/cabang/{id}/edit',[ApiController::class,'editCabang']);
+Route::delete('/cabang/{id}/delete',[ApiController::class,'deleteCabang']);

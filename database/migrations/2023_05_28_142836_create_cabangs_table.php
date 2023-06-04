@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('cabangs', function (Blueprint $table) {
             $table->id();
+            $table->string('nama_cabang');
+            $table->string('alamat_cabang');
+            $table->string('telp_cabang');
             $table->timestamps();
         });
     }

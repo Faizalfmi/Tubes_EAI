@@ -13,6 +13,15 @@ return new class extends Migration
     {
         Schema::create('status', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('pemesanan_id');
+            $table->foreignId('cabang_id');
+            $table->foreignId('kurir_id');
+            $table->string('nama_barang');
+            $table->string('lokasi_barang');
+            $table->string('alamat_tujuan');
+            $table->string('status_pengiriman');
+            $table->string('tanggal_pengiriman');
+            $table->string('tanggal_penerimaan');
             $table->timestamps();
         });
     }
